@@ -1,6 +1,7 @@
-Diagnostix = function() {
+Diagnostix = function(opts) {
     this.start = 0;
     this.marks = [];
+    this.isDev = opts.isDev();
 };
 
 Diagnostix.prototype = {
@@ -17,7 +18,9 @@ Diagnostix.prototype = {
     
     end : function() {
         this.marks.push('\n*** End Diagnostix ***');
-        console.log( this.marks.join('\n') );
+        if ( this.isDev ) {
+            console.log( this.marks.join('\n') );
+        }
     }
     
 };

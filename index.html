@@ -9,7 +9,11 @@
     
     <script src="Diagnostix.js"></script>
     <script>
-    var d = new Diagnostix();
+    var d = new Diagnostix({
+        isDev : function(){
+            return !!location.host.match('.local');
+        }
+    });
     </script>
 </body>
 </html>
