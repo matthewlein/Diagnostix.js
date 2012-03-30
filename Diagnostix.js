@@ -6,7 +6,7 @@ Diagnostix = function() {
 Diagnostix.prototype = {
     
     init : function() {
-        this.marks.push('*** Diagnostix ***');
+        this.marks.push('*** Start Diagnostix ***\n');
         this.start = new Date().getTime();
     },
     
@@ -16,6 +16,7 @@ Diagnostix.prototype = {
     },
     
     end : function() {
+        this.marks.push('\n*** End Diagnostix ***');
         console.log( this.marks.join('\n') );
     }
     
